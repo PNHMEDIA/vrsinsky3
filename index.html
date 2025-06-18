@@ -1,0 +1,2405 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velkoobchod Vršinský - Voda, Topení, Plyn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <style>
+        /**
+ * Vrsinsky Professional E-shop Design - CENTERED VERSION WITH DEMO PRODUCTS
+ */
+
+/* 1. ROOT & GENERAL STYLES =================================== */
+:root {
+    /* Professional Color Palette - Darker Blue and Orange */
+    --primary: #1e3a5f;           /* Dark navy blue */
+    --primary-light: #2c5282;    /* Lighter navy */
+    --primary-dark: #1a202c;     /* Very dark navy */
+    --secondary: #ff6b00;        /* Orange */
+    --secondary-light: #ff8500;  /* Lighter orange */
+    --secondary-dark: #e05700;   /* Darker orange */
+    --accent: #ff6b00;           /* Orange accent */
+    --accent-light: #ff8500;     /* Lighter orange */
+    
+    /* Neutral Colors */
+    --light: #f8fafc;            /* Very light gray */
+    --medium: #e2e8f0;           /* Light gray */
+    --dark: #2d3748;             /* Dark gray */
+    --text: #2d3748;             /* Dark text */
+    --text-light: #718096;       /* Light text */
+    --white: #ffffff;
+    --border: #e2e8f0;
+
+    /* Professional shadows */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+    --shadow-xl: 0 20px 25px rgba(0,0,0,0.15);
+
+    /* Transitions */
+    --transition-fast: all 0.15s ease-out;
+    --transition-normal: all 0.3s ease-out;
+    --transition-slow: all 0.5s ease-out;
+
+    /* Border radius */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --border-radius-xl: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    color: var(--text);
+    background-color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center; /* CENTER ALL TEXT */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-normal);
+}
+
+ul { list-style: none; }
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center; /* CENTER ALL TEXT */
+}
+
+/* 2. BUTTONS & TYPOGRAPHY ==================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary);
+    color: var(--white);
+    border: 2px solid transparent;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition-normal);
+    text-align: center;
+    white-space: nowrap;
+    min-height: 44px;
+}
+
+.btn:hover, .btn:focus {
+    background-color: var(--primary-light);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-light);
+}
+
+.btn-accent {
+    background-color: var(--accent);
+    color: var(--white);
+}
+
+.btn-accent:hover {
+    background-color: var(--accent-light);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border-color: var(--white);
+    color: var(--white);
+}
+
+.btn-outline:hover {
+    background-color: var(--white);
+    color: var(--primary);
+}
+
+.btn-sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    min-height: 32px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 1rem;
+    text-align: center; /* CENTER ALL HEADINGS */
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+    position: relative;
+    text-align: center; /* CENTER H2 */
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary), var(--secondary-light));
+    border-radius: 2px;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-align: center; /* CENTER H3 */
+}
+
+p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    text-align: center; /* CENTER PARAGRAPHS */
+}
+
+.text-center { 
+    text-align: center; 
+}
+
+section {
+    padding: 3rem 0;
+    text-align: center; /* CENTER SECTIONS */
+}
+
+/* 3. HERO SECTION - FIXED ==================================== */
+.hero {
+    min-height: 80vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    text-align: center;
+    /* Fallback background */
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+}
+
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.hero-slide.active { opacity: 1; }
+
+.hero-content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(30, 58, 95, 0.4), rgba(26, 32, 44, 0.5));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center; /* CENTER HERO CONTENT */
+}
+
+.hero h1 {
+    color: var(--white);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.hero-subtitle {
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--secondary-light);
+    font-size: 0.9rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.hero-stats {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    margin: 3rem 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 0.5rem;
+    flex: 1;
+    max-width: 120px;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--secondary-light);
+    display: block;
+    line-height: 1;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.stat-text {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin-top: 0.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-scroll-down {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+    z-index: 2;
+}
+
+.hero-indicators {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    z-index: 3;
+}
+
+.hero-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.hero-indicator.active {
+    background-color: var(--white);
+    transform: scale(1.2);
+}
+
+/* 4. CATEGORIES NAVIGATION - COMPACT DESIGN ================== */
+.categories-nav {
+    background: linear-gradient(135deg, var(--light), var(--white));
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.categories-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.category-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.category-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    background: var(--white);
+    border-radius: var(--border-radius-md);
+    border: 2px solid transparent;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-normal);
+    text-decoration: none;
+    color: var(--text);
+    text-align: center;
+}
+
+.category-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.category-item i {
+    font-size: 1.25rem;
+    color: var(--secondary);
+    margin-right: 0.75rem;
+    transition: var(--transition-normal);
+}
+
+.category-item:hover i {
+    color: var(--primary);
+    transform: scale(1.1);
+}
+
+.category-item span {
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* 5. PROMO BANNER SECTION ==================================== */
+.promo-banner {
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+    padding: 1.5rem 0;
+    color: var(--white);
+    text-align: center;
+}
+
+/* 6. FEATURED PRODUCTS SECTION =============================== */
+.featured-products {
+    background: var(--white);
+    text-align: center;
+}
+
+.products-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.demo-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.demo-product {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+.demo-product:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--secondary-light);
+}
+
+.demo-product-image {
+    height: 200px;
+    overflow: hidden;
+    background: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.demo-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.demo-product:hover .demo-product-image img {
+    transform: scale(1.05);
+}
+
+.demo-product-info {
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.demo-product-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+    text-align: center;
+}
+
+.demo-product-description {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.demo-product-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.demo-product-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.view-all-products {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* 7. PRODUCT CATEGORIES DETAILED - COMPACT =================== */
+.product-categories {
+    background: var(--light);
+    text-align: center;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.category-card {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--secondary-light);
+}
+
+.category-image {
+    height: 120px;
+    overflow: hidden;
+}
+
+.category-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.category-card:hover .category-image img {
+    transform: scale(1.05);
+}
+
+.category-content {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.category-content h3 {
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.category-content p {
+    flex-grow: 1;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* 8. SPECIAL OFFERS SECTION ================================== */
+.special-offers {
+    background: var(--white);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+}
+
+.demo-offers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.demo-offer {
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+    color: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    transition: var(--transition-normal);
+}
+
+.demo-offer:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.demo-offer h3 {
+    color: var(--white);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.demo-offer p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.demo-offer-discount {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* 9. BENEFITS SECTION - COMPACT ============================== */
+.benefits {
+    background: linear-gradient(135deg, var(--light), var(--white));
+    text-align: center;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.benefit-item {
+    padding: 1rem 0.75rem;
+    border-radius: var(--border-radius-lg);
+    background: var(--white);
+    text-align: center;
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+}
+
+.benefit-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--secondary-light);
+}
+
+.benefit-icon {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+    transition: var(--transition-normal);
+}
+
+.benefit-item:hover .benefit-icon {
+    color: var(--secondary);
+    transform: scale(1.1);
+}
+
+.benefit-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+    text-align: center;
+}
+
+.benefit-item p {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+/* 10. NEWSLETTER SECTION ===================================== */
+.newsletter {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    color: var(--white);
+    padding: 2.5rem 0;
+    text-align: center;
+}
+
+.newsletter-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    text-align: center;
+}
+
+.newsletter-text h3 {
+    color: var(--white);
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+.newsletter-text p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.input-group input {
+    padding: 0.875rem 1.25rem;
+    border: none;
+    border-radius: var(--border-radius-md);
+    font-size: 1rem;
+    background: var(--white);
+    color: var(--text);
+    text-align: center;
+}
+
+.input-group input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+/* 11. CONTACT SECTION ======================================== */
+.contact {
+    background: var(--light);
+    text-align: center;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 1.5rem;
+}
+
+.contact-info {
+    order: 2;
+    text-align: center;
+}
+
+.contact-map {
+    order: 1;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    height: 350px;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-normal);
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+.contact-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--secondary-light);
+}
+
+.contact-icon {
+    font-size: 1.25rem;
+    color: var(--primary);
+    margin-right: 1.25rem;
+    margin-top: 0.25rem;
+    min-width: 20px;
+}
+
+.contact-text strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--text);
+    text-align: center;
+}
+
+.contact-text {
+    text-align: center;
+}
+
+.hours {
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    margin-top: 1rem;
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+.hours-title {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: var(--text);
+    text-align: center;
+}
+
+.hours-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+}
+
+.hours-item:last-child {
+    border-bottom: none;
+}
+
+/* 12. CHATBOT STYLES (UNCHANGED) ============================= */
+.ai-chatbot {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1000;
+}
+
+.chatbot-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+}
+
+.chatbot-icon:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-lg);
+    background: var(--primary-dark);
+}
+
+.chatbot-window {
+    position: fixed;
+    bottom: 4.5rem;
+    right: 1rem;
+    left: 1rem;
+    max-width: 380px;
+    height: 70vh;
+    max-height: 500px;
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    z-index: 1001;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.chatbot-window.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.chatbot-header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.chatbot-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chatbot-title h3 {
+    font-weight: 600;
+    margin: 0;
+    font-size: 1rem;
+    color: var(--white);
+}
+
+.chat-pulse {
+    width: 8px;
+    height: 8px;
+    background-color: var(--secondary-light);
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+.chatbot-close {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: var(--transition-fast);
+}
+
+.chatbot-close:hover {
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+.chatbot-body {
+    flex-grow: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: var(--light);
+}
+
+.chat-timestamp {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin: 0.5rem 0 1rem 0;
+}
+
+.chatbot-message {
+    display: flex;
+    margin-bottom: 1rem;
+    max-width: 85%;
+    animation: fadeInUp 0.4s forwards;
+    align-items: flex-end;
+}
+
+.chatbot-message.user {
+    margin-left: auto;
+    flex-direction: row-reverse;
+}
+
+.chatbot-message-content {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.chatbot-message.bot .chatbot-message-content {
+    background-color: var(--white);
+    color: var(--text);
+    border-radius: 12px 12px 12px 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.chatbot-message.user .chatbot-message-content {
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 12px 12px 0 12px;
+}
+
+.chatbot-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-right: 8px;
+    box-shadow: var(--shadow-sm);
+}
+
+.chatbot-message.user .chatbot-avatar {
+    display: none;
+}
+
+.chatbot-footer {
+    padding: 0.75rem 1rem;
+    border-top: 1px solid var(--medium);
+    background-color: var(--white);
+    flex-shrink: 0;
+}
+
+.chatbot-suggestions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding-bottom: 0.75rem;
+}
+
+.suggestion-chip {
+    background-color: var(--medium);
+    color: var(--text);
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.suggestion-chip:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.chatbot-input-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chatbot-input {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--medium);
+    border-radius: 20px;
+    outline: none;
+    transition: var(--transition-normal);
+    font-size: 0.9rem;
+    background-color: var(--light);
+}
+
+.chatbot-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 150, 212, 0.1);
+    background-color: var(--white);
+}
+
+.chatbot-send {
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-normal);
+    flex-shrink: 0;
+}
+
+.chatbot-send:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--shadow-sm);
+    background: var(--primary-dark);
+}
+
+/* CSS for Chatbot Typing Indicator */
+.chatbot-message.typing-indicator .chatbot-message-content {
+    padding: 1rem 1.25rem;
+}
+
+.chatbot-message.typing-indicator .dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 2px;
+    animation: bounce-dot 1.4s infinite ease-in-out both;
+}
+
+.chatbot-message.typing-indicator .dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.chatbot-message.typing-indicator .dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+/* 13. ANIMATIONS ============================================= */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-5px) translateX(-50%);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes bounce-dot {
+    0%, 80%, 100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1.0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-in-left.appear {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-in-right.appear {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 14. RESPONSIVE DESIGN ====================================== */
+
+/* Mobile First - Extra Small devices (320px and up) */
+@media (min-width: 320px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .category-list {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .category-item {
+        padding: 0.75rem 1rem;
+    }
+    
+    .category-item i {
+        font-size: 1.1rem;
+        margin-right: 0.75rem;
+    }
+    
+    .category-item span {
+        font-size: 0.75rem;
+    }
+}
+
+/* Small devices (576px and up) */
+@media (min-width: 576px) {
+    .category-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+    
+    .category-item {
+        padding: 0.75rem 1rem;
+    }
+    
+    .category-item i {
+        font-size: 1.25rem;
+        margin-right: 0.75rem;
+    }
+    
+    .category-item span {
+        font-size: 0.8rem;
+    }
+}
+
+/* Tablet Styles (768px and up) */
+@media (min-width: 768px) {
+    .container {
+        padding: 0 2rem;
+    }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    .hero {
+        min-height: 85vh;
+    }
+
+    .hero-content {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .hero p {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .hero-stats {
+        flex-direction: row;
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    .stat-item {
+        max-width: none;
+        padding: 0.75rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-text {
+        font-size: 0.8rem;
+    }
+
+    .hero-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .hero-indicators {
+        right: 3rem;
+        left: auto;
+        transform: none;
+    }
+
+    .category-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        max-width: 900px;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .category-image {
+        height: 140px;
+    }
+
+    .category-content {
+        padding: 1.25rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .benefit-item {
+        padding: 1.25rem 1rem;
+    }
+
+    .benefit-icon {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .benefit-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .newsletter-content {
+        flex-direction: row;
+        text-align: center;
+        justify-content: space-between;
+    }
+
+    .newsletter-text {
+        flex: 1;
+        margin-right: 2.5rem;
+    }
+
+    .newsletter-form {
+        flex-shrink: 0;
+    }
+
+    .input-group {
+        flex-direction: row;
+        max-width: 350px;
+    }
+
+    .input-group input {
+        flex: 1;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: start;
+    }
+
+    .contact-info {
+        order: 1;
+    }
+
+    .contact-map {
+        order: 2;
+        height: 450px;
+    }
+
+    .chatbot-window {
+        right: 2rem;
+        left: auto;
+    }
+
+    .chatbot-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        bottom: 2rem;
+        right: 2rem;
+    }
+}
+
+/* Desktop Styles (992px and up) */
+@media (min-width: 992px) {
+    section {
+        padding: 5rem 0;
+    }
+
+    .stat-number {
+        font-size: 2.25rem;
+    }
+
+    .category-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+        max-width: 1000px;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+
+    .category-image {
+        height: 160px;
+    }
+
+    .category-content {
+        padding: 1.5rem;
+    }
+
+    .category-content h3 {
+        font-size: 1.25rem;
+    }
+
+    .category-content p {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+
+    .benefit-item {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .benefit-icon {
+        font-size: 2.25rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .benefit-title {
+        font-size: 1.15rem;
+        margin-bottom: 0.75rem;
+    }
+}
+
+/* Large Desktop Styles (1200px and up) */
+@media (min-width: 1200px) {
+    .benefit-item {
+        padding: 2rem 1.5rem;
+    }
+
+    .category-content {
+        padding: 1.75rem;
+    }
+    
+    .category-list {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 0.75rem;
+        max-width: 1200px;
+    }
+    
+    .category-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 0.75rem;
+    }
+    
+    .category-item i {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+        font-size: 1.75rem;
+    }
+    
+    .category-item span {
+        font-size: 0.75rem;
+    }
+}
+
+/* Extra Large Desktop Styles (1400px and up) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+/* 15. PRESTASHOP OVERRIDES =================================== */
+body#index #content > section {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+body#index #content > section > .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+    body#index #content > section > .container {
+        padding: 0 2rem;
+    }
+}
+
+body#index #wrapper,
+body#index #main,
+body#index #content-wrapper,
+body#index section#content {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+body#index #header {
+    margin-bottom: 0 !important;
+}
+
+/* 16. ACCESSIBILITY & OPTIMIZATIONS ========================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Focus styles for accessibility */
+.btn:focus,
+.category-item:focus,
+.contact-item:focus {
+    outline: 2px solid var(--secondary-light);
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    .hero,
+    .ai-chatbot,
+    .newsletter {
+        display: none;
+    }
+}
+.contact {
+    text-align: left;
+}
+
+.contact .container {
+    text-align: left;
+}
+
+.contact h2 {
+    text-align: left;
+}
+
+.contact-content {
+    text-align: left;
+}
+
+.contact-info {
+    text-align: left;
+}
+
+.contact-item {
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.contact-text {
+    text-align: left;
+}
+
+.contact-text strong {
+    text-align: left;
+}
+
+.hours {
+    text-align: left;
+}
+
+.hours-title {
+    text-align: left;
+}
+
+.hours-item {
+    text-align: left;
+}
+.hero {
+    text-align: left;
+}
+
+.hero-content {
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.hero h1 {
+    text-align: left;
+}
+
+.hero-subtitle {
+    text-align: left;
+}
+
+.hero p {
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.hero-stats {
+    justify-content: flex-start;
+}
+
+.hero-buttons {
+    justify-content: flex-start;
+}
+    </style>
+
+    <main id="content" class="page-home">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-slider">
+                <div class="hero-slide active" style="background-image: url('https://www.rezac.cz/img/_antialias_750a036a-57a1-4eab-b45e-94da6396074e_5de041255495cc95951a2614299bef3b.jpg');"></div>
+                <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1920&h=1080&fit=crop');"></div>
+                <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&h=1080&fit=crop');"></div>
+                <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1920&h=1080&fit=crop');"></div>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-subtitle">Voda · Topení · Plyn</div>
+                    <h1>Velkoobchod Vršinský</h1>
+                    <p>Váš spolehlivý partner s více než 30 let zkušeností v dodávkách materiálů pro instalatéry a stavební firmy</p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">8 milionů+</span>
+                            <span class="stat-text">produktů na skladě</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">od 48h</span>
+                            <span class="stat-text">dodání po ČR</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">30+</span>
+                            <span class="stat-text">let tradice</span>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-buttons">
+                        <a href="#products" class="btn">Prohlédnout nabídku</a>
+                        <a href="tel:+420281080080" class="btn btn-outline">Kontaktovat nás</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Navigation Section -->
+        <section class="categories-nav" id="categories">
+            <div class="container">
+                <div class="categories-header">
+                    <h2>Kategorie produktů</h2>
+                    <p>Vyberte si z našeho širokého sortimentu</p>
+                </div>
+                
+                <div class="category-list">
+                    <a href="https://vrsinsky.cz/14-voda" class="category-item">
+                        <i class="fas fa-tint"></i>
+                        <span>VODA</span>
+                    </a>
+                    <a href="https://vrsinsky.cz/15-topeni" class="category-item">
+                        <i class="fas fa-fire"></i>
+                        <span>TOPENÍ</span>
+                    </a>
+                    <a href="https://vrsinsky.cz/16-plyn" class="category-item">
+                        <i class="fas fa-burn"></i>
+                        <span>PLYN</span>
+                    </a>
+                    <a href="https://vrsinsky.cz/23-sanita" class="category-item">
+                        <i class="fas fa-shower"></i>
+                        <span>SANITA</span>
+                    </a>
+                    <a href="https://vrsinsky.cz/17-klimatizace" class="category-item">
+                        <i class="fas fa-snowflake"></i>
+                        <span>KLIMATIZACE</span>
+                    </a>
+                    <a href="https://vrsinsky.cz/32-zahradni-program" class="category-item">
+                        <i class="fas fa-seedling"></i>
+                        <span>ZAHRADA</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section class="products featured-products" id="products">
+            <div class="container">
+                <div class="products-header">
+                    <h2>Doporučené produkty</h2>
+                    <p>Nejprodávanější produkty z našeho sortimentu</p>
+                </div>
+                
+                <!-- Demo Products -->
+                <div class="demo-products">
+                    <div class="demo-product">
+                        <div class="demo-product-image">
+                            <img src="data:image/jpeg;base64,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" alt="Plynový kotel">
+                        </div>
+                        <div class="demo-product-info">
+                            <div class="demo-product-title">Plynový kotel Vaillant ecoTEC</div>
+                            <div class="demo-product-description">Kondenzační plynový kotel s vysokou účinností pro vytápění a ohřev vody.</div>
+                            <div class="demo-product-price">45 890 Kč</div>
+                            <div class="demo-product-actions">
+                                <a href="#" class="btn btn-sm">Detail produktu</a>
+                                <a href="#" class="btn btn-secondary btn-sm">Do košíku</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-product">
+                        <div class="demo-product-image">
+                            <img src="data:image/jpeg;base64,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" alt="Radiátor">
+                        </div>
+                        <div class="demo-product-info">
+                            <div class="demo-product-title">Deskový radiátor Korado</div>
+                            <div class="demo-product-description">Kvalitní deskový radiátor s vysokým tepelným výkonem a moderním designem.</div>
+                            <div class="demo-product-price">2 890 Kč</div>
+                            <div class="demo-product-actions">
+                                <a href="#" class="btn btn-sm">Detail produktu</a>
+                                <a href="#" class="btn btn-secondary btn-sm">Do košíku</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-product">
+                        <div class="demo-product-image">
+                            <img src="data:image/jpeg;base64,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" alt="Armatura">
+                        </div>
+                        <div class="demo-product-info">
+                            <div class="demo-product-title">Baterie Grohe Eurosmart</div>
+                            <div class="demo-product-description">Moderní umyvadlová baterie s keramickou kartuší a úspornou technologií.</div>
+                            <div class="demo-product-price">3 490 Kč</div>
+                            <div class="demo-product-actions">
+                                <a href="#" class="btn btn-sm">Detail produktu</a>
+                                <a href="#" class="btn btn-secondary btn-sm">Do košíku</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-product">
+                        <div class="demo-product-image">
+                            <img src="data:image/jpeg;base64,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" alt="Čerpadlo">
+                        </div>
+                        <div class="demo-product-info">
+                            <div class="demo-product-title">Oběhové čerpadlo Grundfos</div>
+                            <div class="demo-product-description">Energeticky úsporné oběhové čerpadlo pro topné systémy s elektronickou regulací.</div>
+                            <div class="demo-product-price">8 790 Kč</div>
+                            <div class="demo-product-actions">
+                                <a href="#" class="btn btn-sm">Detail produktu</a>
+                                <a href="#" class="btn btn-secondary btn-sm">Do košíku</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="view-all-products">
+                    <a href="/produkty" class="btn btn-secondary">Zobrazit všechny produkty</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Categories Detailed Section -->
+        <section class="product-categories">
+            <div class="container">
+                <div class="text-center">
+                    <h2>Naše specializace </h2>
+                    <p>Kompletní sortiment pro vodo-topo-plyn instalace</p>
+                </div>
+                
+                <div class="category-grid">
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="https://images.pfisterfaucets.com/is/image/Pfister/bg-overview?$pfFullWidthCoverImage$&qlt=75&wid=1920&fit=constrain" alt="Voda - armatury a potrubí">
+                        </div>
+                        <div class="category-content">
+                            <h3>Voda</h3>
+                            <p>Armatury, potrubí, čerpadla a veškeré příslušenství pro vodní instalace. Kvalitní komponenty od renomovaných výrobců.</p>
+                            <a href="https://vrsinsky.cz/14-voda" class="btn btn-sm">Zobrazit kategorii</a>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="https://beststorageheaters.co.uk/wp-content/uploads/2022/04/nrmla-1.jpg" alt="Topení - radiátory a kotle">
+                        </div>
+                        <div class="category-content">
+                            <h3>Topení</h3>
+                            <p>Kotle, radiátory, podlahové topení a kompletní topné systémy. Moderní řešení pro efektivní vytápění.</p>
+                            <a href="https://vrsinsky.cz/15-topeni" class="btn btn-sm">Zobrazit kategorii</a>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="https://homeoutletdirect.com/cdn/shop/products/thor-kitchen-48-gas-rangetop-in-stainless-steel-with-6-burners-including-power-burners-and-griddle-hrt4806u-rangetops-thor-kitchen-homeoutletdirect-356133_1200x.jpg?v=1648946218" alt="Plyn - armatury a ventily">
+                        </div>
+                        <div class="category-content">
+                            <h3>Plyn</h3>
+                            <p>Plynové armatury, ventily, regulátory a bezpečnostní prvky. Certifikované komponenty pro bezpečné plynové instalace.</p>
+                            <a href="https://vrsinsky.cz/16-plyn" class="btn btn-sm">Zobrazit kategorii</a>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="https://cdn.keraservis.cz/user/www-keraservis-cz/3d/keraservis-moderni-koupelna-5.jpg" alt="Sanita - koupelnové vybavení">
+                        </div>
+                        <div class="category-content">
+                            <h3>Sanita</h3>
+                            <p>Koupelnové vybavení, sprchové systémy a sanitární keramika. Kompletní řešení pro moderní koupelny.</p>
+                            <a href="https://vrsinsky.cz/23-sanita" class="btn btn-sm">Zobrazit kategorii</a>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="https://www.81klima.cz/images/redactor/klimatizace-do-domu-1.webp" alt="Klimatizace - větrání a chlazení">
+                        </div>
+                        <div class="category-content">
+                            <h3>Klimatizace</h3>
+                            <p>Klimatizační jednotky, ventilátory a systémy pro úpravu vzduchu. Profesionální řešení pro komfort interiéru.</p>
+                            <a href="https://vrsinsky.cz/17-klimatizace" class="btn btn-sm">Zobrazit kategorii</a>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="https://s42814.pcdn.co/wp-content/uploads/2019/12/sprinklers_x_0-1.jpg.optimal.jpg" alt="Zahrada - zavlažování">
+                        </div>
+                        <div class="category-content">
+                            <h3>Zahrada</h3>
+                            <p>Zahradní hadice, zavlažovací systémy a venkovní armatury. Vše pro údržbu a zalévání zahrad.</p>
+                            <a href="https://vrsinsky.cz/32-zahradni-program" class="btn btn-sm">Zobrazit kategorii</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Offers Section -->
+        <section class="special-offers">
+            <div class="container">
+                <div class="text-center">
+                    <h2>Akční nabídka</h2>
+                    <p>Výhodné ceny na vybrané produkty</p>
+                </div>
+                
+                <!-- Demo Special Offers -->
+                <div class="demo-offers">
+                    <div class="demo-offer">
+                        <h3>Zimní akce na topení</h3>
+                        <div class="demo-offer-discount">-7%</div>
+                        <p>Sleva na všechny radiátory a kotle. Připravte se na topnou sezónu s našimi výhodnými cenami!</p>
+                        <a href="#" class="btn btn-outline">Zobrazit akci</a>
+                    </div>
+                    
+                    <div class="demo-offer">
+                        <h3>Koupelnové vybavení</h3>
+                        <div class="demo-offer-discount">-5%</div>
+                        <p>Moderní armatury a sprchové systémy se slevou. Renovujte svou koupelnu s prémiovou kvalitou.</p>
+                        <a href="#" class="btn btn-outline">Zobrazit akci</a>
+                    </div>
+                    
+                    <div class="demo-offer">
+                        <h3>Nad 5 tisíc korun</h3>
+                        <div class="demo-offer-discount">Dopraha Zdarma</div>
+                        <p>Neplatí pro paletovou přepravu.</p>
+                        <a href="#" class="btn btn-outline">Zobrazit akci</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits">
+            <div class="container">
+                <div class="text-center">
+                    <h2>Proč si vybrat nás</h2>
+                    <p>Spolehlivý partner pro profesionály</p>
+                </div>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-truck-fast"></i>
+                        </div>
+                        <div class="benefit-title">Rychlé dodání</div>
+                        <p>Objednávky doručíme od 3 dnů a po celé ČR.</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="benefit-title">Odborné poradenství</div>
+                        <p>Naši technici jsou vám k dispozici každý pracovní den od 8:00 do 16:00 a rádi poradí s výběrem správného produktu.</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="benefit-title">Ověřená kvalita</div>
+                        <p>Dodáváme pouze certifikované produkty od renomovaných výrobců s řádnou zárukou a kompletním servisem.</p>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-warehouse"></i>
+                        </div>
+                        <div class="benefit-title">Rozsáhlý sklad</div>
+                        <p>Více než 8 milionů produktů na skladě zajišťuje okamžitou dostupnost a rychlé zpracování objednávek.</p>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="benefit-title">30 let zkušeností</div>
+                        <p>Dlouhodobé partnerství s instalatéry a stavebními firmami založené na důvěře a profesionalitě.</p>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="benefit-title">Flexibilní platby</div>
+                        <p>Různé možnosti plateb včetně fakturace pro firmy a výhodných platebních podmínek pro stálé zákazníky.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <div class="newsletter-text">
+                        <h3>Zůstaňte v obraze</h3>
+                        <p>Přihlaste se k odběru novinek a získejte informace o akčních nabídkách, novinkách a odborných tipech.</p>
+                    </div>
+                    <div class="newsletter-form">
+                        <form action="#" method="post">
+                            <div class="input-group">
+                                <input type="email" placeholder="Váš e-mail" required>
+                                <button type="submit" class="btn">Přihlásit se</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2 style="text-align: center;">Kontakt a lokace</h2>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <a href="https://maps.app.goo.gl/fJYW4ATExL1TCXEHA">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <strong>Adresa</strong>
+                                    Velkoobchod Vršinský s.r.o.<br>
+                                    Průmyslová 1357<br>
+                                    198 00 Praha 9 - Kyje
+                                </div>
+                            </div>
+                        </a>
+                        
+                        <a href="tel:+420281080080">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <strong>Telefon</strong>
+                                    +420 281 080 080 (Prodej)<br>
+                                    +420 281 080 081 (Technická podpora)
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="mailto:info@vrsinsky.cz">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <strong>Email</strong>
+                                    info@vrsinsky.cz<br>
+                                    objednavky@vrsinsky.cz
+                                </div>
+                            </div>
+                        </a>
+                        
+                        <div class="hours">
+                            <div class="hours-title">Otevírací doba</div>
+                            <div class="hours-item">
+                                <span>Pondělí - Pátek</span>
+                                <span>7:30 - 16:00</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Sobota</span>
+                                <span>8:00 - 12:00</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Neděle</span>
+                                <span>Zavřeno</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2705.43513129395!2d14.399625525400669!3d50.00938878513042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b96b87559ca47%3A0xaa4d00fba8721cd7!2sVelkoobchod%20Vr%C5%A1insk%C3%BD%2C%20s.r.o.!5e1!3m2!1scs!2scz!4v1747307207079!5m2!1scs!2scz" 
+                                width="100%" 
+                                height="300" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Chatbot Widget -->
+        <div class="ai-chatbot">
+            <div class="chatbot-icon" id="chatbotToggle">
+                <i class="fas fa-robot"></i>
+            </div>
+            
+            <div class="chatbot-window" id="chatbotWindow">
+                <div class="chatbot-header">
+                    <div class="chatbot-title">
+                        <div class="chat-pulse"></div>
+                        <h3>VršinskýAI Asistent</h3>
+                    </div>
+                    <div class="chatbot-close" id="chatbotClose">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                 
+                <div class="chatbot-body" id="chatbotBody">
+                    <div class="chat-timestamp">Dnes</div>
+                    
+                    <div class="chatbot-message bot">
+                        <div class="chatbot-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="chatbot-message-content">
+                            Dobrý den, jsem VršinskýAI, váš osobní asistent pro vodu, topení a plyn. Jak vám mohu dnes pomoci?
+                        </div>
+                    </div>
+                    
+                    <div class="chatbot-suggestions">
+                        <div class="suggestion-chip">Jak vybrat správný kotel?</div>
+                        <div class="suggestion-chip">Možnosti dopravy</div>
+                        <div class="suggestion-chip">Aktuální akce a slevy</div>
+                    </div>
+                </div>
+                
+                <div class="chatbot-footer">
+                    <div class="chatbot-input-group">
+                        <input type="text" class="chatbot-input" id="chatbotInput" placeholder="Napište otázku...">
+                        <button class="chatbot-send" id="chatbotSend" type="button">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+   
+    <script>
+        // Vrsinsky Custom JavaScript - WITH CONVERSATION MEMORY
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // --- GENERAL WEBSITE FUNCTIONALITY ---
+    
+    // Header Scroll Effect
+    const header = document.getElementById('header');
+    if (header) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+    }
+    
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.getElementById('mainNav');
+    
+    if (mobileMenuBtn && mainNav) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            
+            const icon = this.querySelector('i');
+            if (mainNav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
+    
+    // Smooth Scroll for homepage anchors
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId.length > 1) {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    if (mainNav && mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        const icon = mobileMenuBtn.querySelector('i');
+                        if (icon) {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    }
+                }
+            }
+        });
+    });
+    
+    // Hero Image Slideshow - Now works with inline styles
+    const slides = document.querySelectorAll('.hero-slide');
+    const indicators = document.querySelectorAll('.hero-indicator');
+    if (slides.length > 0) {
+        let currentSlide = 0;
+        let slideInterval = setInterval(nextSlide, 5000);
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (indicators[i]) indicators[i].classList.remove('active');
+            });
+            if (slides[index]) slides[index].classList.add('active');
+            if (indicators[index]) indicators[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            showSlide((currentSlide + 1) % slides.length);
+        }
+
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', function() {
+                clearInterval(slideInterval);
+                showSlide(parseInt(this.getAttribute('data-slide')) || index);
+                slideInterval = setInterval(nextSlide, 20000);
+            });
+        });
+    }
+    
+    // Scroll Animation for Elements
+    const animationElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        animationElements.forEach(el => observer.observe(el));
+    }
+
+    // Add to Cart Button Feedback
+    const addToCartButtons = document.querySelectorAll('.product-add-to-cart, .ajax_add_to_cart_button, .btn-secondary');
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            if (this.textContent.includes('Do košíku')) {
+                e.preventDefault();
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-check"></i> Přidáno!';
+                this.classList.add('added');
+                this.disabled = true;
+                
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                    this.classList.remove('added');
+                    this.disabled = false;
+                }, 2500);
+            }
+        });
+    });
+    
+    console.log('Vršinský website loaded successfully');
+});
+
+// --- CHATBOT FUNCTIONALITY WITH CONVERSATION MEMORY ---
+window.addEventListener('load', function() {
+    console.log('Starting chatbot initialization...');
+    
+    // --- CONVERSATION MEMORY SYSTEM ---
+    let conversationHistory = [];
+    
+    function addToHistory(role, content) {
+        conversationHistory.push({ role: role, content: content });
+        
+        // Keep only last 10 messages (5 exchanges) to prevent memory overload
+        if (conversationHistory.length > 10) {
+            conversationHistory = conversationHistory.slice(-10);
+        }
+        
+        console.log('Conversation history updated. Length:', conversationHistory.length);
+    }
+    
+    // Find chatbot elements
+    const chatbotWindow = document.getElementById('chatbotWindow');
+    const chatbotBody = document.getElementById('chatbotBody');
+    const chatbotInput = document.getElementById('chatbotInput');
+    const chatbotSend = document.getElementById('chatbotSend');
+    const chatbotToggle = document.getElementById('chatbotToggle');
+    const chatbotClose = document.getElementById('chatbotClose');
+    const suggestionChips = document.querySelectorAll('.suggestion-chip');
+
+    console.log('Chatbot elements found:', {
+        window: !!chatbotWindow,
+        body: !!chatbotBody,
+        input: !!chatbotInput,
+        send: !!chatbotSend,
+        toggle: !!chatbotToggle,
+        close: !!chatbotClose
+    });
+
+    // Check if all required elements exist
+    if (!chatbotWindow || !chatbotInput || !chatbotSend || !chatbotToggle || !chatbotBody) {
+        console.error('Missing chatbot elements. Cannot initialize chatbot.');
+        return;
+    }
+
+    // --- CHATBOT EVENT LISTENERS ---
+    
+    // Toggle chatbot window
+    chatbotToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('Chatbot toggle clicked');
+        chatbotWindow.classList.toggle('active');
+    });
+
+    // Close chatbot window  
+    if (chatbotClose) {
+        chatbotClose.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Chatbot close clicked');
+            chatbotWindow.classList.remove('active');
+        });
+    }
+
+    // Send message function WITH MEMORY
+    function sendMessage() {
+        console.log('SendMessage function called');
+        
+        const messageText = chatbotInput.value.trim();
+        console.log('Message text:', messageText);
+        
+        if (messageText === '') {
+            console.log('Empty message, not sending');
+            return;
+        }
+
+        // Add user message to conversation history
+        addToHistory('user', messageText);
+
+        // Display user message
+        appendMessage(messageText, 'user');
+        chatbotInput.value = '';
+        showTypingIndicator();
+
+        // Simulate AI response for demo
+        setTimeout(() => {
+            hideTypingIndicator();
+            let response = "Děkuji za váš dotaz. ";
+            
+            if (messageText.toLowerCase().includes('kotel')) {
+                response += "Pro výběr správného kotle doporučuji zvážit velikost vytápěné plochy, typ paliva a požadovanou účinnost. Naši odborníci vám rádi pomohou s výběrem na tel. +420 281 080 080.";
+            } else if (messageText.toLowerCase().includes('doprav')) {
+                response += "Nabízíme dopravu po celé ČR. Objednávky do 14:00 expedujeme tentýž den s dodáním následující pracovní den. Doprava zdarma při objednávce nad 3000 Kč.";
+            } else if (messageText.toLowerCase().includes('akc') || messageText.toLowerCase().includes('slev')) {
+                response += "Aktuálně máme zimní akci na topení se slevou až 25%, slevu 15% na koupelnové vybavení a 20% slevu na profesionální nářadí. Více informací najdete v sekci Akční nabídka.";
+            } else {
+                response += "Jsem zde, abych vám pomohl s dotazy ohledně našeho sortimentu vody, topení a plynu. Můžete se ptát na produkty, ceny, dostupnost nebo technické specifikace.";
+            }
+            
+            // Add AI response to conversation history
+            addToHistory('assistant', response);
+            appendMessage(response, 'bot');
+        }, 1500);
+    }
+
+    // Send button click event
+    chatbotSend.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('Send button clicked!');
+        sendMessage();
+    });
+
+    // Enter key event
+    chatbotInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            console.log('Enter key pressed!');
+            sendMessage();
+        }
+    });
+
+    // Suggestion chips
+    suggestionChips.forEach(chip => {
+        chip.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Suggestion chip clicked:', this.textContent);
+            chatbotInput.value = this.textContent;
+            sendMessage();
+        });
+    });
+
+    // Helper functions
+    function appendMessage(text, type) {
+        console.log('Appending message:', text, type);
+        
+        const formattedText = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+        
+        const messageWrapper = document.createElement('div');
+        messageWrapper.className = `chatbot-message ${type}`;
+
+        messageWrapper.innerHTML = `
+            ${type === 'bot' ? `<div class="chatbot-avatar"><i class="fas fa-robot"></i></div>` : ''}
+            <div class="chatbot-message-content">${formattedText}</div>
+        `;
+        
+        chatbotBody.appendChild(messageWrapper);
+        chatbotBody.scrollTop = chatbotBody.scrollHeight;
+    }
+
+    function showTypingIndicator() {
+        const typingIndicator = document.createElement('div');
+        typingIndicator.className = 'chatbot-message bot typing-indicator';
+        typingIndicator.innerHTML = `
+            <div class="chatbot-avatar"><i class="fas fa-robot"></i></div>
+            <div class="chatbot-message-content">
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            </div>
+        `;
+        chatbotBody.appendChild(typingIndicator);
+        chatbotBody.scrollTop = chatbotBody.scrollHeight;
+    }
+
+    function hideTypingIndicator() {
+        const indicator = chatbotBody.querySelector('.typing-indicator');
+        if (indicator) {
+            indicator.remove();
+        }
+    }
+
+    console.log('Chatbot with conversation memory initialization complete!');
+});
+    </script>
+</body>
+
+</html>
